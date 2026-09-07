@@ -1,9 +1,7 @@
-# Catalog refinement
+# Refined collection v0.5.0
 
-The public interface uses contextual option counts, exact selectable tags with keyboard autocomplete, and separate font-name search. Release-batch filters are removed. Download labels describe ready-to-use fonts and developer build sources, with approximate ZIP sizes.
+500 Core, 2,000 Balanced, 7,500 Experimental styles. The 1,750 new Balanced variants use Flow, Facet, Flare, Taper, Waist, Forward and Backlean. They check cap, baseline and x-height alignment within 2 font units and preserve source counter counts through the treatment. Signal and Quarry remain unicase.
 
-The Pages workflow verifies the existing v0.4.0 site archive and then applies the current catalog template from this repository. Font binaries and released archives remain versioned separately. The offline catalog in the original full ZIP remains its original version.
+The previous 500 Core and 250 Balanced binaries are unchanged. Seven plain Solid experimental treatments are omitted from the new active catalog, while all original files remain downloadable in v0.4.0. This pass does not claim new experimental designs or individual visual certification.
 
-## Proposed next font pass
-
-Target: 500 Core, 2,000 Balanced, 7,500 Experimental. Current counts remain 500 / 250 / 9,250. Expanding Balanced requires refining and checking another 1,750 styles, not relabeling existing experiments. Keep the Core stable. Balanced should combine expressive design with consistent alignment; Experimental can explore more extreme forms. This is a proposed target, not a completed generation pass.
+The website provides context-sensitive filter counts and selectable autocomplete tags. Build sources and ready-to-use font downloads have separate explanations. Release-batch controls are absent.

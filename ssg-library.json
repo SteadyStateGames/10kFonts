@@ -2,6 +2,11 @@
   "project": "steady-state-games-font-library",
   "owner": "SteadyStateGames",
   "repository": "10kFonts",
-  "release": "v0.4.0",
-  "styles": 10000
+  "release": "v0.5.0",
+  "styles": 10000,
+  "tiers": {
+    "Core": 500,
+    "Balanced": 2000,
+    "Experimental": 7500
+  }
 }
