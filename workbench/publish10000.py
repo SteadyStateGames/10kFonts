@@ -53,12 +53,12 @@ def publish(owner,repo):
         command(['git','-c','user.name='+login,'-c','user.email='+mail,'commit','-m','Publish original 10000-style OFL font library'],source)
     command(['git','-c','credential.helper=','-c','credential.helper=!gh auth git-credential','push','-u','origin','main'],source)
     commit=command(['git','rev-parse','--verify','HEAD'],source).stdout.strip()
-    release=api('repos/'+fullname+'/releases/tags/'+tag,check=False)
+    release=next((r for r in api('repos/'+fullname+'/releases?per_page=100') if r['tag_name']==tag),None)
     notes=HOST/'RELEASE-NOTES.md'
     notes.write_text('10,000 original OFL styles: 500 Core, 250 Balanced, 9,250 Experimental. Full, core, source and 25-style group downloads included. Core retains its prior checks; the new effects remain display experiments. See the catalog for tags, coverage and review limits.','utf-8')
     if release is None:
         gh('release','create',tag,'--repo',fullname,'--draft','--target','main','--title','SSG Fonts: 10,000 styles','--notes-file',str(notes))
-        release=api('repos/'+fullname+'/releases/tags/'+tag)
+        release=next(r for r in api('repos/'+fullname+'/releases?per_page=100') if r['tag_name']==tag)
     assets={a['name']:a for a in release['assets']}
     records=list(plan['assets'])
     sums=HOST/'release-assets/SHA256SUMS.txt'
