@@ -1,0 +1,50 @@
+name: Publish font catalog
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Validated font release tag
+        required: true
+        default: v0.4.0
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: font-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Download and verify the prepared website
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/ssg-site"
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern SSG-10000-Site.zip --pattern SHA256SUMS.txt --dir "$RUNNER_TEMP/ssg-site"
+          cd "$RUNNER_TEMP/ssg-site"
+          sha256sum --ignore-missing -c SHA256SUMS.txt
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          target=Path('public').resolve()
+          target.mkdir(exist_ok=True)
+          with zipfile.ZipFile('SSG-10000-Site.zip') as z:
+              for name in z.namelist():
+                  assert (target/name).resolve().is_relative_to(target)
+              z.extractall(target)
+          PY
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/ssg-site/public
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

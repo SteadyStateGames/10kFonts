@@ -1,0 +1,12 @@
+[
+  {"id":"relay","name":"SSG Relay","mode":"round","weight":84,"width":1.0,"tracking":56,"description":"Soft geometric strokes for friendly game titles.","sample":"READY PLAYER ONE"},
+  {"id":"bastion","name":"SSG Bastion","mode":"slab","weight":100,"width":1.02,"tracking":46,"description":"Square slabs and sturdy stems for tabletop adventures.","sample":"BUILD YOUR KINGDOM"},
+  {"id":"vector","name":"SSG Vector","mode":"angular","weight":84,"width":1.12,"tracking":60,"description":"Clipped polygonal bowls for spacecraft and technology.","sample":"BEYOND THE HORIZON"},
+  {"id":"rivet","name":"SSG Rivet","mode":"stencil","weight":128,"width":1.0,"tracking":52,"description":"Bridged industrial lettering for crates and mission titles.","sample":"DEPLOY THE MEEPLES"},
+  {"id":"orbit","name":"SSG Orbit","mode":"rail","weight":94,"width":1.12,"tracking":56,"description":"Twin illuminated rails for arcade marquees.","sample":"ENTER THE NEXT WORLD"},
+  {"id":"ember","name":"SSG Ember","mode":"nib","weight":100,"width":0.94,"slant":0.16,"tracking":50,"description":"Slanted broad-nib strokes with an energetic rhythm.","sample":"CHASE THE SUNRISE"},
+  {"id":"signal","name":"SSG Signal","mode":"dots","weight":80,"width":1.0,"tracking":65,"description":"A five-by-seven dot matrix for scoreboards and terminals.","sample":"INSERT COIN TO BEGIN"},
+  {"id":"quarry","name":"SSG Quarry","mode":"pixel","weight":100,"width":1.0,"tracking":60,"description":"Solid grid-built pixels for retro worlds and inventories.","sample":"DIG A LITTLE DEEPER"},
+  {"id":"ribbon","name":"SSG Ribbon","mode":"outline","weight":144,"width":1.06,"tracking":50,"description":"Hollow outlined lettering for posters and large overlays.","sample":"MAKE SOMETHING GOOD"},
+  {"id":"spire","name":"SSG Spire","mode":"serif","weight":90,"width":0.72,"tracking":48,"description":"Narrow high-contrast strokes and fine serifs for storybook titles.","sample":"A THOUSAND STORIES"}
+]

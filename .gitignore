@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.zip
+*.ttf
+*.woff2
+.font-build-deps*/
+collection-*/
+workbench/collection-*/
+hosting/
+.godot/
