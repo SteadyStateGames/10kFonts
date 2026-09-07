@@ -71,6 +71,8 @@ jobs:
       name: github-pages
       url: @{{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Check out current catalog interface
+        uses: actions/checkout@v6
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Download and verify the prepared website
@@ -92,6 +94,8 @@ jobs:
                   assert (target/name).resolve().is_relative_to(target)
               z.extractall(target)
           PY
+      - name: Apply current catalog interface
+        run: cp workbench/catalog10000-template.html "$RUNNER_TEMP/ssg-site/public/index.html"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
